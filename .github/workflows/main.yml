@@ -7,6 +7,8 @@ jobs:
     name: Check Unity license activation
     runs-on: ubuntu-latest
     steps:
+      - name: Unity - Activate
+      - uses: game-ci/unity-activate@v2.0.0
       - name: Check
         if: ${{ !startsWith(env.UNITY_LICESNSE, '<') }}
         run: exit 1
