@@ -12,6 +12,7 @@ jobs:
         run: exit 1
 
   testAllModes:
+    needs: checkLicense
     name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
     strategy:
