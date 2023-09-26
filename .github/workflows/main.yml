@@ -3,6 +3,14 @@ name: Main
 on: workflow_dispatch
 
 jobs:
+  checkLicense:
+    name: Check Unity license activation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check
+        if: ${{ !startsWith(env.UNITY_LICESNSE, '<') }}
+        run: exit 1
+
   testAllModes:
     name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
