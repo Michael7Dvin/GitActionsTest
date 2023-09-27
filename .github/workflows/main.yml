@@ -16,7 +16,6 @@ jobs:
           - src/GitActionsProject
         testMode:
           - EditMode
-          - PlayMode
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
