@@ -47,12 +47,11 @@ jobs:
             Library-
 
       - name: Run tests
-        uses: game-ci/unity-test-runner@v3
+        uses: game-ci/unity-test-runner@v2
         id: testRunner
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          customImage: 'unityci/editor:ubuntu-2022.3.0f1-linux-il2cpp-2.0.0'
           coverageOptions: assemblyFilters:+Tests.assembly
           projectPath: ${{ matrix.projectPath }}
           testMode: ${{ matrix.testMode }}
