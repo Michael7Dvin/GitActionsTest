@@ -50,6 +50,7 @@ jobs:
      - uses: webbertakken/unity-test-runner@v2
        id: testRunner
        with:
+         path: src/GitActionsProject
          testMode: all
 
      - uses: actions/upload-artifact@v2
