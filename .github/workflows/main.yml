@@ -1,4 +1,4 @@
-name: GameCI Template 🎮
+name: GameCI Template
 
 on: workflow_dispatch
 
@@ -7,7 +7,7 @@ env:
   
 jobs:
   testRunner:
-    name: Test in ${{ matrix.testMode }} ✨
+    name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -16,6 +16,7 @@ jobs:
           - src/GitActionsProject
         testMode:
           - EditMode
+          - PlayMode
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -51,7 +52,6 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          coverageOptions: assemblyFilters:+Teshts.assembly
           projectPath: ${{ matrix.projectPath }}
           testMode: ${{ matrix.testMode }}
           checkName: ${{ matrix.testMode }} test results
