@@ -65,6 +65,7 @@ jobs:
           testMode: ${{ matrix.testMode }}
           checkName: ${{ matrix.testMode }} test results
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          customParameters: -nographics
 
       - uses: actions/upload-artifact@v3
         with:
