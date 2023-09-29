@@ -7,12 +7,12 @@ jobs:
     name: Acquire license activation file
     runs-on: ubuntu-latest
     steps:     
-      - name: Get file
-        id: getManualLicenseFile
+      - name: Get license activation file
+        id: getLicenseActivationFile
         uses: game-ci/unity-request-activation-file@v2
         
       - name: Expose file as artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
+          name: ${{ steps.getLicenseActivationFile.outputs.filePath }}
+          path: ${{ steps.getLicenseActivationFile.outputs.filePath }}
