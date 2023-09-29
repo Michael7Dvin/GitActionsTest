@@ -1,4 +1,4 @@
-name: GameCI Template
+name: Check Tests
 
 on: pull_request
 
