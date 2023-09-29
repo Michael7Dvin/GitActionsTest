@@ -3,8 +3,7 @@ name: Check Tests
 on: 
   pull_request:
     branches:
-      - master
-      
+     - master
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   
