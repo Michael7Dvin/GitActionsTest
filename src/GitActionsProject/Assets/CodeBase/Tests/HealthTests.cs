@@ -24,6 +24,7 @@ namespace CodeBase.Tests
             health.TakeDamage(damage);
             
             // Assert.
+            // Broken
             health.Value.Should().Be(initialHealthValue + damage);
         }
     }
