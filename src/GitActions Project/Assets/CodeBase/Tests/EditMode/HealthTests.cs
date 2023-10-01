@@ -1,10 +1,9 @@
 ﻿using CodeBase.Gameplay;
 using FluentAssertions;
-using NSubstitute;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace CodeBase.Tests
+namespace CodeBase.Tests.EditMode
 {
     public class HealthTests
     {
@@ -17,7 +16,7 @@ namespace CodeBase.Tests
             
             GameObject gameObject = new GameObject();
             gameObject.AddComponent(typeof(Health));
-            Health health = Substitute.For<Health>();
+            Health health = gameObject.GetComponent<Health>();
             health.Value = initialHealthValue;
 
             // Act.
