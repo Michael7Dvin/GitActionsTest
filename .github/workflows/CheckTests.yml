@@ -1,9 +1,7 @@
 name: Check Tests
 
-on: 
-  pull_request:
-    branches:
-     - master
+on: workflow_dispatch
+
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   
@@ -24,7 +22,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - src/GitActionsProject
+          - src/GitActions Project
         testMode:
           - EditMode
           - PlayMode
