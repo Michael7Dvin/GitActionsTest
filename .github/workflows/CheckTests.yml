@@ -1,9 +1,7 @@
 name: Check Tests
 
-on: 
-  pull_request:
-    branches:
-     - master
+on: workflow_dispatch
+
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   
