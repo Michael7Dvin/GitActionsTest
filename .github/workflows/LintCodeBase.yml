@@ -26,6 +26,6 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter@v5
         env:
-          FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/*.cs
+          FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/.*\.cs
           DEFAULT_BRANCH: dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
