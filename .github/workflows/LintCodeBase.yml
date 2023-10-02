@@ -26,6 +26,6 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter@v5
         env:
-          #VALIDATE_ALL_CODEBASE: false
+          DEFAULT_WORKSPACE: src/GitActions Project/Assets/CodeBase
           DEFAULT_BRANCH: dev
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
