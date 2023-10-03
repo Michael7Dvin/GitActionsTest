@@ -26,9 +26,9 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter@v5
         env:
+          VALIDATE_ALL_CODEBASE: true
           VALIDATE_CSHARP: true
           FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/.*
           #FILTER_REGEX_EXCLUDE: .*.meta
           DEFAULT_BRANCH: master
-
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
