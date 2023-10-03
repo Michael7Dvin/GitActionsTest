@@ -27,7 +27,7 @@ jobs:
         uses: super-linter/super-linter@v5
         env:
           VALIDATE_CSHARP: true
-          #FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/.*.cs
+          FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/.*
           #FILTER_REGEX_EXCLUDE: .*.meta
           DEFAULT_BRANCH: master
 
