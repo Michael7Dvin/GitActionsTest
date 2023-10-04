@@ -6,7 +6,7 @@ using VContainer.Unity;
 
 namespace CodeBase.Infrastructure.Installers
 {
-    public class SceneInstaller : LifetimeScope
+    public class MainSceneInstaller : LifetimeScope
     {
         [SerializeField] private Health _health;
         [SerializeField] private float _damage;
@@ -16,7 +16,7 @@ namespace CodeBase.Infrastructure.Installers
             builder.Register<IInputService, InputService>(Lifetime.Singleton);
             
             builder
-                .Register<Bootstrapper>(Lifetime.Singleton)
+                .Register<GameplayRunner>(Lifetime.Singleton)
                 .AsImplementedInterfaces()
                 .WithParameter(_health)
                 .WithParameter(_damage);

@@ -1,35 +1,21 @@
-﻿using CodeBase.Gameplay;
-using CodeBase.Infrastructure.Services.InputService;
-using UnityEngine;
-using VContainer;
+﻿using Cysharp.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 using VContainer.Unity;
 
 namespace CodeBase.Infrastructure
 {
     public class Bootstrapper : IInitializable
     {
-        private readonly IObjectResolver _objectResolver;
-        private readonly IInputService _inputService;
-        private readonly Health _health;
-        private readonly float _damage;
+        private AssetReference _mainScene;
 
-        public Bootstrapper(IObjectResolver objectResolver, IInputService inputService, Health health, float damage)
+        public Bootstrapper(AssetReference mainScene)
         {
-            _objectResolver = objectResolver;
-            _inputService = inputService;
-            _health = health;
-            _damage = damage;
+            _mainScene = mainScene;
         }
 
         public void Initialize()
         {
-            _inputService.Initialize();
-            
-            Damager damager = new(_health, _damage);
-            _objectResolver.Inject(damager);
-            damager.Initialize();
-            
-            Debug.Log("initialze");
+            Addressables.LoadSceneAsync(_mainScene);
         }
     }
 }
