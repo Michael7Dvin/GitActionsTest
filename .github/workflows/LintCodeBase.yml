@@ -30,5 +30,6 @@ jobs:
           VALIDATE_CSHARP: true
           FILTER_REGEX_INCLUDE: src/GitActions Project/Assets/CodeBase/.*.*
           DEFAULT_BRANCH: master
-          EDITORCONFIG_FILE_NAME: /.editorconfig
+          LINTER_RULES_PATH: .github/Linters
+          EDITORCONFIG_FILE_NAME: .editorconfig
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
